@@ -7,6 +7,7 @@ namespace GarageApplication
         static void Main(string[] args)
         {
             Garage garage = new Garage();
+            Vehicle vehicle = new Vehicle();
         }
     }
 }
