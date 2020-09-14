@@ -1,9 +1,11 @@
 ﻿namespace GarageApplication
 {
-    internal class Garage
+    public class Garage<TVehicle>
     {
+        TVehicle[] vehicles;
         public Garage()
         {
+            vehicles = new TVehicle[10];
         }
     }
 }
