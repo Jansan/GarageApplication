@@ -8,6 +8,7 @@ namespace GarageApplication
         {
             Garage garage = new Garage();
             Vehicle vehicle = new Vehicle();
+            GarageHandler garageHandler = new GarageHandler();
         }
     }
 }
