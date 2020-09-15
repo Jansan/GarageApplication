@@ -1,6 +1,6 @@
 ﻿namespace GarageApplication
 {
-    internal class Vehicle : IVehicle
+    public class Vehicle : IVehicle
     {
         private string registrationNumber;
 
