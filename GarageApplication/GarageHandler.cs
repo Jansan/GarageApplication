@@ -1,12 +1,28 @@
-﻿namespace GarageApplication
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace GarageApplication
 {
-    internal abstract class GarageHandler
+    internal  class GarageHandler
     {
         private Garage<Vehicle> garage;
 
-        public GarageHandler()
+        //Take size as parameter
+        public GarageHandler(int size)
         {
-            garage = new Garage<Vehicle>(10);
+            garage = new Garage<Vehicle>(size);
+        }
+
+        //public bool Park()
+        //{
+        //    garage.Park(new Vehicle(""));
+        //}
+
+        internal IEnumerable<Vehicle> GetAll()
+        {
+            //Fungerar ej innnan du implemeterat GetEnumerator i garaet för att det är linq!
+            return garage.ToList();
         }
     }
 }

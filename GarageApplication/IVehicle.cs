@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GarageApplication
 {
-    interface IVehicle
+   public  interface IVehicle
     {
         public string RegistrationNumber { get; set; }
         public string  Color { get; set; }
