@@ -31,7 +31,10 @@ namespace GarageApplication
             //Fixa till så det går att köra linq/foreach på en garage instans
             //Hämta ut alla parkerade fordon
             //Yield returna alla
-            throw new System.NotImplementedException();
+            foreach (var item in vehicles)
+            {
+                yield return item;
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()

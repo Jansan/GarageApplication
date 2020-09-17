@@ -14,9 +14,9 @@ namespace GarageApplication
             garage = new Garage<Vehicle>(size);
         }
 
-        //public bool Park()
+        //public bool Park(Vehicle vehicle)
         //{
-        //    garage.Park(new Vehicle(""));
+        //    garage.Park(garage);
         //}
 
         internal IEnumerable<Vehicle> GetAll()

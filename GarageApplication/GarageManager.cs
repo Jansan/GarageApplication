@@ -25,18 +25,18 @@ namespace GarageApplication
 
         private void FirstMeny()
         {
-            ui.Print("Welcome");
-            ui.Print("How big is the garage");
+            ui.Print("Welcome to Garage Application");
+            ui.Print("How big is the garage you want");
 
         }
 
         private void MainMeny()
         {
             ui.Print("Please navigate through the menu by inputting the number \n(1, 2, 3, 4, 5, 6, 7, 0) of your choice"
-                  + "\n1. List all parked vehicles"
-                  + "\n2. List vehicle types and how many of each are in the garage"
-                  + "\n3. Add and remove vehicles from the garage"
-                  + "\n4. Create a new garage with your specified size"
+                  + "\n1. Create a new garage with your specified size"
+                  + "\n2. Add and remove vehicles from the garage"
+                  + "\n3. List vehicle types and how many of each are in the garage"
+                  + "\n4. List all parked vehicles"
                   + "\n5. Opportunity to popularize the garage with a number of vehicles from the start"
                   + "\n6. Find a specific vehicle via the registration number."
                   + "\n7. Search for vehicles based on one property"
@@ -56,14 +56,39 @@ namespace GarageApplication
             switch (input)
             {
                 case '1':
-                    ListAllVehicles();
+                    CreateGarage();
                     break;
                 case '2':
+                    while (true)
+                    {
+                        char userInput = ' ';
+                        try
+                        {
+                            userInput = Console.ReadLine()[0];
+                        }
+                        catch (IndexOutOfRangeException)
+                        {
+
+                            ui.Clear();
+                            ui.Print("Please enter some input!");
+                        }
+                        switch (userInput)
+                        {
+                            case '1':
+                                AddVehicle();
+                                break;
+                            case '2':
+                                RemoveVehile();
+                                break;
+                            default:
+                                break
+                        }
+                    }
                     break;
                 case '3':
                     break;
                 case '4':
-                    CreateGarage();
+                    ListAllVehicles();
                     break;
                 case '5':
                     break;
@@ -82,12 +107,22 @@ namespace GarageApplication
             }
         }
 
+        private void RemoveVehile()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddVehicle()
+        {
+
+        }
 
         private void CreateGarage()
         {
+
             //Take size from user
             // UI.GetIntInput eller likande
-            int size = 10;
+            int size = ui.GetIntInput("Garage size");
             handler = new GarageHandler(size);
 
         }
@@ -98,6 +133,7 @@ namespace GarageApplication
             foreach (var vehicle in allVehicles)
             {
                 ui.Print(vehicle.ToString());
+                
             }
         }
     }
