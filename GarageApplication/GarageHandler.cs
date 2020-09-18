@@ -14,15 +14,16 @@ namespace GarageApplication
             garage = new Garage<Vehicle>(size);
         }
 
-        //public bool Park(Vehicle vehicle)
-        //{
-        //    garage.Park(garage);
-        //}
-
+        
         internal IEnumerable<Vehicle> GetAll()
         {
             //Fungerar ej innnan du implemeterat GetEnumerator i garaet för att det är linq!
             return garage.ToList();
+        }
+
+        internal void AddVehicle(Vehicle vehicle)
+        {
+            garage.Park(vehicle);
         }
     }
 }

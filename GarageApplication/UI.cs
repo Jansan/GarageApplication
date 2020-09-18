@@ -27,9 +27,9 @@ namespace GarageApplication
             return result;
         }
 
-        private string GetStringInput(string prompt)
+        public string GetStringInput(string prompt)
         {
-            Console.WriteLine(prompt);
+            Console.Write(prompt);
             string result = Console.ReadLine();
             return result;
         }
