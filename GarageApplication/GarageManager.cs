@@ -150,60 +150,179 @@ namespace GarageApplication
                 switch (input)
                 {
                     case "1":
-                        Console.WriteLine("Airplane");
-                        
+
+                        AddAirplane();
                         break;
                     case "2":
-                        Console.WriteLine("Boat");
 
+                        AddBoat();
                         break;
                     case "3":
-                        Console.WriteLine("Bus");
 
+                        AddBus();
                         break;
                     case "4":
-                        Console.WriteLine("Car");
 
+                        AddCar();
                         break;
                     case "5":
-                        Console.WriteLine("Motocycle");
 
+                        AddMotocycle();
                         break;
                     case "0":
-                        Console.WriteLine("Exit");
+
                         return;
                     default:
                         break;
                 }
             }
+
+
+        }
+        
+        private void AddMotocycle()
+        {
+            
+        }
+
+        private void AddCar()
+        {
+            
+        }
+
+        private void AddBus()
+        {
             string registrationNumber = "";
             string color = "";
             int numberOfWheels = 0;
+            string fueltype = "";
+            int numberOfSeats = 0;
+            double lenght = 0;
+
 
             // RegistrationNumber
             while (registrationNumber.Length != 6)
             {
-                ui.Print("Add the vehicle registration number Please enter 6 symbols");
+                ui.Print("Add the registration number Please enter 6 symbols");
                 registrationNumber = ui.GetStringInput("RegistrationNumber: ").ToUpper();
                 if (registrationNumber.Length != 6)
                     ui.Print("Registrationnumber is 6 symbols without spaces!");
             }
+
             // Color
             ui.Print("What color is the vehicle");
             color = ui.GetStringInput("Color: ").ToUpper();
             if (color == "")
                 ui.Print("Unknow color");
+
             // NumberOfWheels
-            // while(numberOfWheels < 0 || numberOfWheels > 30)
-            // {
             ui.Print("Please enter number of wheels");
             numberOfWheels = ui.GetIntInput("NumberOfWheels: ");
-            //}
 
-            Vehicle vehicle = new Vehicle(registrationNumber, color, numberOfWheels);
+            // Fueltype
+            ui.Print("Add the fueltype");
+            fueltype = ui.GetStringInput("Fueltype: ");
 
-            handler.AddVehicle(vehicle);
-            Console.WriteLine("Vehicle is Save");
+            // numberOfSeats
+            ui.Print("Add the number Of Seats");
+            numberOfSeats = ui.GetIntInput("numberOfSeats: ");
+
+            // lenght
+            ui.Print("Add the lenght");
+            lenght = ui.GetDoubleInput("lenght: ");
+
+            Bus bus = new Bus(registrationNumber, color, numberOfWheels, fueltype, numberOfSeats, lenght);
+            handler.AddVehicle(bus);
+        }
+
+        private void AddBoat()
+        {
+            string registrationNumber = "";
+            string color = "";
+            int numberOfWheels = 0;
+            int numberOfEngines = 0;
+            int cylinderVolume = 0;
+            string fueltype = "";
+
+            // RegistrationNumber
+            while (registrationNumber.Length != 6)
+            {
+                ui.Print("Add the registration number Please enter 6 symbols");
+                registrationNumber = ui.GetStringInput("RegistrationNumber: ").ToUpper();
+                if (registrationNumber.Length != 6)
+                    ui.Print("Registrationnumber is 6 symbols without spaces!");
+            }
+
+            // Color
+            ui.Print("What color is the vehicle");
+            color = ui.GetStringInput("Color: ").ToUpper();
+            if (color == "")
+                ui.Print("Unknow color");
+
+            // NumberOfWheels
+            ui.Print("Please enter number of wheels");
+            numberOfWheels = ui.GetIntInput("NumberOfWheels: ");
+
+            // NumberOfEngines
+            ui.Print("Add the number Of Engines");
+            numberOfEngines = ui.GetIntInput("NumberOfEngines: ");
+
+            // cylinderVolume
+            ui.Print("Add the cylinderVolume");
+            cylinderVolume = ui.GetIntInput("cylinderVolume: ");
+
+
+            // Fueltype
+            ui.Print("Add the fueltype");
+            fueltype = ui.GetStringInput("Fueltype: ");
+
+            Boat boat = new Boat(registrationNumber, color, numberOfWheels, numberOfEngines, cylinderVolume, fueltype);
+            handler.AddVehicle(boat);
+        }
+
+        private void AddAirplane()
+        {
+            string registrationNumber = "";
+            string color = "";
+            int numberOfWheels = 0;
+            int numberOfEngines = 0;
+            int cylinderVolume = 0;
+            string fueltype = "";
+
+            // RegistrationNumber
+            while (registrationNumber.Length != 6)
+            {
+                ui.Print("Add the registration number Please enter 6 symbols");
+                registrationNumber = ui.GetStringInput("RegistrationNumber: ").ToUpper();
+                if (registrationNumber.Length != 6)
+                    ui.Print("Registrationnumber is 6 symbols without spaces!");
+            }
+
+            // Color
+            ui.Print("What color is the");
+            color = ui.GetStringInput("Color: ").ToUpper();
+            if (color == "")
+                ui.Print("Unknow color");
+
+            // NumberOfWheels
+            ui.Print("Please enter number of wheels");
+            numberOfWheels = ui.GetIntInput("NumberOfWheels: ");
+
+            // NumberOfEngines
+            ui.Print("Add the number Of Engines");
+            numberOfEngines = ui.GetIntInput("NumberOfEngines: ");
+
+            // cylinderVolume
+            ui.Print("Add the cylinderVolume");
+            cylinderVolume = ui.GetIntInput("cylinderVolume: ");
+
+
+            // fueltype
+            ui.Print("Add the fueltype");
+            fueltype = ui.GetStringInput("Fueltype: ");
+
+            Airplane airplane = new Airplane(registrationNumber, color, numberOfWheels, numberOfEngines, cylinderVolume, fueltype);
+            handler.AddVehicle(airplane);
 
         }
 

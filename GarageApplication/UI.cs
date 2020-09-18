@@ -26,6 +26,24 @@ namespace GarageApplication
             } while (!success);
             return result;
         }
+        public double GetDoubleInput(string prompt)
+        {
+            bool success = false;
+            double result;
+            do
+            {
+                string answer = GetStringInput(prompt);
+                success = double.TryParse(answer, out result);
+                if (!success)
+                {
+                    Console.WriteLine("An integer please!");
+                }
+
+
+
+            } while (!success);
+            return result;
+        }
 
         public string GetStringInput(string prompt)
         {
