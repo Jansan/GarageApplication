@@ -182,12 +182,96 @@ namespace GarageApplication
         
         private void AddMotocycle()
         {
-            
+            string registrationNumber = "";
+            string color = "";
+            int numberOfWheels = 0;
+            int cylinderVolume = 0;
+            string fueltype = "";
+            int numberOfSeats = 0;
+
+
+            // RegistrationNumber
+            while (registrationNumber.Length != 6)
+            {
+                ui.Print("Add the registration number Please enter 6 symbols");
+                registrationNumber = ui.GetStringInput("RegistrationNumber: ").ToUpper();
+                if (registrationNumber.Length != 6)
+                    ui.Print("Registrationnumber is 6 symbols without spaces!");
+            }
+
+            // Color
+            ui.Print("What color is the vehicle");
+            color = ui.GetStringInput("Color: ").ToUpper();
+            if (color == "")
+                ui.Print("Unknow color");
+
+            // NumberOfWheels
+            ui.Print("Please enter number of wheels");
+            numberOfWheels = ui.GetIntInput("NumberOfWheels: ");
+
+            // NumberOfWheels
+            ui.Print("Please enter cylinderVolume");
+            cylinderVolume = ui.GetIntInput("cylinderVolume: ");
+
+            // Fueltype
+            ui.Print("Add the fueltype");
+            fueltype = ui.GetStringInput("Fueltype: ");
+
+            // numberOfSeats
+            ui.Print("Add the number Of Seats");
+            numberOfSeats = ui.GetIntInput("numberOfSeats: ");
+
+           
+
+            Motorcycle motorcycle = new Motorcycle(registrationNumber, color, numberOfWheels,cylinderVolume, fueltype, numberOfSeats);
+            handler.AddVehicle(motorcycle);
+            ui.Print($"You success added Motorcycle");
         }
 
         private void AddCar()
         {
-            
+            string registrationNumber = "";
+            string color = "";
+            int numberOfWheels = 0;
+            string fueltype = "";
+            int numberOfSeats = 0;
+            double lenght = 0;
+
+
+            // RegistrationNumber
+            while (registrationNumber.Length != 6)
+            {
+                ui.Print("Add the registration number Please enter 6 symbols");
+                registrationNumber = ui.GetStringInput("RegistrationNumber: ").ToUpper();
+                if (registrationNumber.Length != 6)
+                    ui.Print("Registrationnumber is 6 symbols without spaces!");
+            }
+
+            // Color
+            ui.Print("What color is the vehicle");
+            color = ui.GetStringInput("Color: ").ToUpper();
+            if (color == "")
+                ui.Print("Unknow color");
+
+            // NumberOfWheels
+            ui.Print("Please enter number of wheels");
+            numberOfWheels = ui.GetIntInput("NumberOfWheels: ");
+
+            // lenght
+            ui.Print("Add the cylinderVolume");
+            lenght = ui.GetDoubleInput("cylinderVolume: ");
+            // Fueltype
+            ui.Print("Add the fueltype");
+            fueltype = ui.GetStringInput("Fueltype: ");
+
+            // numberOfSeats
+            ui.Print("Add the number Of Seats");
+            numberOfSeats = ui.GetIntInput("numberOfSeats: ");
+
+
+            Car car = new Car(registrationNumber, color, numberOfWheels, fueltype, numberOfSeats, lenght);
+            handler.AddVehicle(car);
+            ui.Print($"You success added car");
         }
 
         private void AddBus()
@@ -233,6 +317,8 @@ namespace GarageApplication
 
             Bus bus = new Bus(registrationNumber, color, numberOfWheels, fueltype, numberOfSeats, lenght);
             handler.AddVehicle(bus);
+
+            ui.Print($"You success added bus");
         }
 
         private void AddBoat()
@@ -278,6 +364,8 @@ namespace GarageApplication
 
             Boat boat = new Boat(registrationNumber, color, numberOfWheels, numberOfEngines, cylinderVolume, fueltype);
             handler.AddVehicle(boat);
+
+            ui.Print($"You success added boat");
         }
 
         private void AddAirplane()
@@ -323,6 +411,8 @@ namespace GarageApplication
 
             Airplane airplane = new Airplane(registrationNumber, color, numberOfWheels, numberOfEngines, cylinderVolume, fueltype);
             handler.AddVehicle(airplane);
+
+            ui.Print($"You success added airplane");
 
         }
 

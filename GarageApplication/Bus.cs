@@ -34,5 +34,15 @@ namespace GarageApplication
             NumberOfSeats = NumberOfSeats;
             Lenght = lenght;
         }
+
+        public override string ToString()
+        {
+            return $"RegistrationNumber: {base.RegistrationNumber} " +
+                $"Color: {base.Color} " +
+                $"NumberOfWheels: {base.NumberOfWheels} " +
+                $"Fueltype: {Fueltype} " +
+                $"NumberOfSeats: {NumberOfSeats} " +
+                $"Lenght: {Lenght} ";
+        }
     }
 }

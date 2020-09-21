@@ -35,5 +35,15 @@ namespace GarageApplication
             Fueltype = fueltype;
 
         }
+
+        public override string ToString()
+        {
+            return $"RegistrationNumber: {base.RegistrationNumber} " +
+                $"Color: {base.Color} " +
+                $"NumberOfWheels: {base.NumberOfWheels} " +
+                $"NumberOfEngines: {NumberOfEngines} " +
+                $"CylinderVolume: {CylinderVolume} " +
+                $"Fueltype: {Fueltype} ";
+        }
     }
 }
