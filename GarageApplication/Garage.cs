@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace GarageApplication
@@ -34,6 +35,14 @@ namespace GarageApplication
             foreach (var item in vehicles)
             {
                 yield return item;
+            }
+        }
+
+        internal void RemoveVehicle(string inputReg)
+        {
+            foreach (var vehicle in vehicles)
+            {
+               
             }
         }
 

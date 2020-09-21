@@ -119,9 +119,11 @@ namespace GarageApplication
         }
 
         // Remove Vehicle
-        private void RemoveVehile()
+        private void RemoveVehicle()
         {
-            throw new NotImplementedException();
+
+            string inputReg = ui.GetStringInput("Vilken fordon vill tabort?");
+            handler.RemoveVehicle(inputReg);
         }
 
         // Add Vehicle
@@ -179,7 +181,7 @@ namespace GarageApplication
 
 
         }
-        
+        // Add Motocycle
         private void AddMotocycle()
         {
             string registrationNumber = "";
@@ -227,7 +229,7 @@ namespace GarageApplication
             handler.AddVehicle(motorcycle);
             ui.Print($"You success added Motorcycle");
         }
-
+        // Add Car
         private void AddCar()
         {
             string registrationNumber = "";
@@ -273,7 +275,7 @@ namespace GarageApplication
             handler.AddVehicle(car);
             ui.Print($"You success added car");
         }
-
+        // Add Bus
         private void AddBus()
         {
             string registrationNumber = "";
@@ -320,7 +322,7 @@ namespace GarageApplication
 
             ui.Print($"You success added bus");
         }
-
+        // Add Boat
         private void AddBoat()
         {
             string registrationNumber = "";
@@ -367,7 +369,7 @@ namespace GarageApplication
 
             ui.Print($"You success added boat");
         }
-
+        // Add Airplane
         private void AddAirplane()
         {
             string registrationNumber = "";
@@ -415,7 +417,7 @@ namespace GarageApplication
             ui.Print($"You success added airplane");
 
         }
-
+        // CreateGarage
         private void CreateGarage()
         {
 
@@ -425,7 +427,7 @@ namespace GarageApplication
             handler = new GarageHandler(size);
 
         }
-
+        //ListAllVehicles
         private void ListAllVehicles()
         {
             var allVehicles = handler.GetAll();

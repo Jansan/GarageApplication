@@ -25,5 +25,10 @@ namespace GarageApplication
         {
             garage.Park(vehicle);
         }
+
+        internal void RemoveVehicle(string inputReg)
+        {
+            garage.RemoveVehicle(inputReg);
+        }
     }
 }
